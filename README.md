@@ -5,6 +5,10 @@
 
 > Web scraping made simple.
 
+## Why use this?
+
+This is built on the top of [jsdom](https://github.com/jsdom/jsdom) which is __A JavaScript implementation of the WHATWG DOM and HTML standards__, you might also like [Puppeteer](https://github.com/GoogleChrome/puppeteer) but that is a __REAL__ browser which is considerablely slower.
+
 ## Install
 
 ```bash
