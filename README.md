@@ -7,7 +7,7 @@
 
 ## Why use this?
 
-This is built on the top of [jsdom](https://github.com/jsdom/jsdom) which is __A JavaScript implementation of the WHATWG DOM and HTML standards__, you might also like [Puppeteer](https://github.com/GoogleChrome/puppeteer) but that is a __REAL__ browser which is considerablely slower.
+This is built on the top of [jsdom](https://github.com/jsdom/jsdom) which is __A JavaScript implementation of the WHATWG DOM and HTML standards__, you might also like [Puppeteer](https://github.com/GoogleChrome/puppeteer) which is considerablely slower and heavier but also closer to a __REAL__ browser.
 
 ## Install
 
