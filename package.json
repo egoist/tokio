@@ -1,0 +1,35 @@
+{
+  "name": "tokio",
+  "version": "0.0.0",
+  "description": "Web scraping made simple.",
+  "repository": {
+    "url": "egoist/tokio",
+    "type": "git"
+  },
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
+  "scripts": {
+    "test": "npm run lint && jest",
+    "lint": "xo"
+  },
+  "author": "egoist <0x142857@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "jsdom": "^11.10.0"
+  },
+  "devDependencies": {
+    "eslint-config-rem": "^4.0.0",
+    "jest": "^22.4.3",
+    "xo": "^0.21.0"
+  },
+  "xo": {
+    "extends": "rem",
+    "envs": ["jest"]
+  },
+  "jest": {
+    "testEnvironment": "node"
+  }
+}
