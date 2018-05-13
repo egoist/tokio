@@ -55,7 +55,8 @@ class Tokio extends EventEmitter {
           if (err) return reject(err)
           if (manually) {
             // eslint-disable-next-line camelcase
-            window.__tokio_ready__ = () => {
+            const method = typeof manually === 'string' ? manually : '__tokio_ready__'
+            window[method] = () => {
               resolve(window)
             }
           }

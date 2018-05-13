@@ -55,9 +55,11 @@ Wait for certain time (in milliseconds) or dom element to show up.
 
 ##### options.manually
 
-- __Type__: `boolean`
+- __Type__: `boolean` `string`
 
 Instead of using [options.wait](#options-wait), you can manually call `window.__tokio_ready__()` in your website to tell us that it's ready to be captured.
+
+It can also be a string like `i_am_ready` so that you can call `window.i_am_ready()` instead.
 
 ##### options.resourceFilter
 
