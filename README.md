@@ -61,6 +61,16 @@ Instead of using [options.wait](#options-wait), you can manually call `window.__
 
 Whether to load certain resource. Check out the [resource](https://github.com/jsdom/jsdom/blob/master/lib/old-api.md#custom-external-resource-loader) type.
 
+### tokio.fetch()
+
+- __Type__: `() => Promise<string>`
+
+Fetch URL and return corresponding HTML. (JavaScript on this page will be evaluated.)
+
+### tokio.query(html, opts)
+
+This is basically [`cheerio.load(html, opts)`](https://github.com/cheeriojs/cheerio#loading).
+
 ## Contributing
 
 1. Fork it!
