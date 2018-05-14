@@ -5,9 +5,12 @@
 
 > Web scraping made simple.
 
-## Why use this?
+## Features
 
-This is built on the top of [jsdom](https://github.com/jsdom/jsdom) which is __A JavaScript implementation of the WHATWG DOM and HTML standards__, you might also like [Puppeteer](https://github.com/GoogleChrome/puppeteer) which is considerablely slower and heavier but also closer to a __REAL__ browser.
+- Built on the top of [jsdom](https://github.com/jsdom/jsdom).
+- It runs inline and external scripts on the page.
+- You can add resource filter to not load certain external resources.
+- Simple and fast, only 100 SLOC and it does not require Electron or Chromium.
 
 ## Install
 
