@@ -12,7 +12,8 @@
   ],
   "scripts": {
     "test": "npm run lint && jest",
-    "lint": "xo"
+    "lint": "xo",
+    "toc": "markdown-toc -i README.md"
   },
   "author": "egoist <0x142857@gmail.com>",
   "license": "MIT",
@@ -23,6 +24,7 @@
   "devDependencies": {
     "eslint-config-rem": "^4.0.0",
     "jest": "^22.4.3",
+    "markdown-toc": "^1.2.0",
     "xo": "^0.21.0"
   },
   "xo": {

@@ -1,4 +1,3 @@
-
 # tokio
 
 [![NPM version](https://img.shields.io/npm/v/tokio.svg?style=flat)](https://npmjs.com/package/tokio) [![NPM downloads](https://img.shields.io/npm/dm/tokio.svg?style=flat)](https://npmjs.com/package/tokio) [![CircleCI](https://circleci.com/gh/egoist/tokio/tree/master.svg?style=shield)](https://circleci.com/gh/egoist/tokio/tree/master)  [![donate](https://img.shields.io/badge/$-donate-ff69b4.svg?maxAge=2592000&style=flat)](https://github.com/egoist/donate) [![chat](https://img.shields.io/badge/chat-on%20discord-7289DA.svg?style=flat)](https://chat.egoist.moe)
@@ -17,6 +16,26 @@
 ```bash
 yarn add tokio
 ```
+
+## Table of Contents
+
+<!-- toc -->
+
+- [Usage](#usage)
+- [API](#api)
+  * [new Tokio(options)](#new-tokiooptions)
+    + [options](#options)
+      - [options.url](#optionsurl)
+      - [options.wait](#optionswait)
+      - [options.manually](#optionsmanually)
+      - [options.resourceFilter](#optionsresourcefilter)
+      - [options.requestOptions](#optionsrequestoptions)
+  * [tokio.fetch()](#tokiofetch)
+  * [tokio.query(html, opts)](#tokioqueryhtml-opts)
+- [Contributing](#contributing)
+- [Author](#author)
+
+<!-- tocstop -->
 
 ## Usage
 
@@ -69,6 +88,15 @@ It can also be a string like `i_am_ready` so that you can call `window.i_am_read
 - __Type__: `resource => boolean`
 
 Whether to load certain resource. Check out the [resource](https://github.com/jsdom/jsdom/blob/master/lib/old-api.md#custom-external-resource-loader) type.
+
+##### options.requestOptions
+
+- `proxy`: `string` A URL for a HTTP proxy to use for the requests.
+- `agent`: http(s).Agent instance to use.
+- `agentOptions`: The agent options; defaults to `{ keepAlive: true, keepAliveMsecs: 115000 }`, see [http api](https://nodejs.org/api/http.html) for more details.
+- `strictSSL`: If `true`, requires SSL certificates be valid; defaults to `true`, see [request module](https://github.com/request/request#requestoptions-callback) for more details.
+- `userAgent`: The user agent string used in requests; defaults to `Node.js (#process.platform#; U; rv:#process.version#)`
+- `headers`: An object giving any headers that will be used while loading the HTML from `options.url`, if applicable.
 
 ### tokio.fetch()
 

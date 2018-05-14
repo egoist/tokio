@@ -18,7 +18,8 @@ class Tokio extends EventEmitter {
       url,
       wait,
       manually = false,
-      resourceFilter = defaultResourceFilter
+      resourceFilter = defaultResourceFilter,
+      requestOptions = {}
     } = this.options
   ) {
     if (manually && wait) {
@@ -31,13 +32,30 @@ class Tokio extends EventEmitter {
 
     this.emit('fetching', url)
 
+    const {
+      headers,
+      userAgent,
+      agent,
+      agentOptions,
+      strictSSL,
+      proxy
+    } = requestOptions
+
     return new Promise((resolve, reject) => {
       jsdom.env({
+        userAgent,
+        agent,
+        agentOptions,
+        strictSSL,
+        proxy,
         url,
-        headers: {
-          Accept:
-            'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
-        },
+        headers: Object.assign(
+          {
+            Accept:
+              'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+          },
+          headers
+        ),
         resourceLoader(resource, callback) {
           if (resourceFilter(resource)) {
             resource.defaultFetch(callback)
@@ -55,7 +73,8 @@ class Tokio extends EventEmitter {
           if (err) return reject(err)
           if (manually) {
             // eslint-disable-next-line camelcase
-            const method = typeof manually === 'string' ? manually : '__tokio_ready__'
+            const method =
+              typeof manually === 'string' ? manually : '__tokio_ready__'
             window[method] = () => {
               resolve(window)
             }
