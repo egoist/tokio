@@ -17,6 +17,7 @@ class Tokio extends EventEmitter {
     {
       url,
       wait,
+      variables,
       manually = false,
       resourceFilter = defaultResourceFilter,
       requestOptions = {}
@@ -77,6 +78,11 @@ class Tokio extends EventEmitter {
               typeof manually === 'string' ? manually : '__tokio_ready__'
             window[method] = () => {
               resolve(window)
+            }
+          }
+          if (variables) {
+            for (const name of Object.keys(variables)) {
+              window[name] = variables[name]
             }
           }
         },

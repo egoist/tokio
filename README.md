@@ -98,6 +98,10 @@ Whether to load certain resource. Check out the [resource](https://github.com/js
 - `userAgent`: The user agent string used in requests; defaults to `Node.js (#process.platform#; U; rv:#process.version#)`
 - `headers`: An object giving any headers that will be used while loading the HTML from `options.url`, if applicable.
 
+##### options.variables
+
+Inject variables to the global scope `window`.
+
 ### tokio.fetch()
 
 - __Type__: `() => Promise<string>`
